@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Better Me — Daily Practice</title>
+  <meta name="description" content="Приложение ежедневного личностного развития. Пройди тест, узнай свой психотип и получай одну 5-минутную практику каждый день." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ SCREEN: WELCOME ============ -->
+  <div id="screen-welcome" class="screen active">
+    <div class="screen-inner glass-card">
+      <div class="logo-glow">✦</div>
+      <h1 class="app-title">Better Me</h1>
+      <p class="app-subtitle">Саморазвитие без выгорания</p>
+      <p class="app-desc">Пройди тест, узнай свою психологическую архитектуру и получай одну простую практику каждый день. Твоя лучшая версия — это серия маленьких шагов.</p>
+      <button id="btn-start-test" class="btn btn-primary">Начать тест</button>
+    </div>
+  </div>
+
+  <!-- ============ SCREEN: TEST ============ -->
+  <div id="screen-test" class="screen">
+    <div class="screen-inner">
+      <header class="test-header">
+        <span class="test-counter" id="test-counter">1 / 10</span>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" id="progress-bar"></div>
+        </div>
+      </header>
+
+      <div class="question-card glass-card" id="question-card">
+        <p class="question-text" id="question-text"></p>
+        <div class="answers-list" id="answers-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SCREEN: RESULTS ============ -->
+  <div id="screen-results" class="screen">
+    <div class="screen-inner glass-card">
+      <div class="result-emoji" id="result-emoji">🧭</div>
+      <h2 class="result-title">Ваш психотип</h2>
+      <p class="result-name" id="result-name">Исследователь</p>
+      <p class="result-desc" id="result-desc"></p>
+
+      <div class="profile-chart" id="profile-chart"></div>
+
+      <button id="btn-go-task" class="btn btn-primary">Получить практику дня</button>
+    </div>
+  </div>
+
+  <!-- ============ SCREEN: DAILY TASK ============ -->
+  <div id="screen-task" class="screen">
+    <div class="screen-inner">
+      <header class="task-header">
+        <h2 class="task-date" id="task-date"></h2>
+        <button class="btn-icon" id="btn-profile" title="Мой профиль" aria-label="Профиль">👤</button>
+      </header>
+
+      <div class="task-card glass-card" id="task-card">
+        <div class="task-type-badge" id="task-type-badge"></div>
+        <p class="task-text" id="task-text"></p>
+        <div class="task-actions">
+          <button id="btn-complete" class="btn btn-success">✓ Выполнено</button>
+        </div>
+        <div class="task-done-overlay" id="task-done-overlay">
+          <span class="done-icon">🌟</span>
+          <p>Отлично! Практика выполнена.<br/>Следующая — завтра.</p>
+        </div>
+      </div>
+
+      <div class="streak-bar" id="streak-bar">
+        <span>🔥 Серия:</span>
+        <span id="streak-count">0</span>
+        <span>дней</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PROFILE PANEL ============ -->
+  <div id="profile-panel" class="profile-panel hidden">
+    <div class="profile-panel-inner glass-card">
+      <button class="btn-close" id="btn-close-profile" aria-label="Закрыть">✕</button>
+      <h3>Мой профиль</h3>
+      <div class="profile-chart-mini" id="profile-chart-mini"></div>
+      <button id="btn-reset" class="btn btn-ghost">Пересдать тест</button>
+    </div>
+  </div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
